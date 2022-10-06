@@ -1,0 +1,29 @@
+schema {
+    mutation: Mutation
+}
+
+input CreateContentReqGqlInput {
+    description: String!
+    enableComments: Boolean!
+    enableClickToCall: Boolean!
+    enableLikes: Boolean!
+    valid: Boolean!
+    fromDate: String!
+    toDate: String!
+    textColor: String!
+    backgroundColor: String!
+    backgroundGraphic: String!
+    templateText: String!
+    contentType: String!
+    status: String!
+}
+
+type CreateContentRespGql {
+   contentId: Int!
+}
+
+type Mutation {
+    createContent(appId: Int!, multiMediaContent: String!, basicDetails: CreateContentReqGqlInput!): CreateContentRespGql!
+}
+
+

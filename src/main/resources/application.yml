@@ -1,0 +1,9 @@
+
+enmo:
+  auth-server:
+    access-token-uri: http://localhost:9090/auth/realms/clacks/protocol/openid-connect/token
+    client-id: content-wizard-web
+    grant-type: password
+    username: ${ENMO_USER_NAME} #Configure your enmo user name here
+    password: ${ENMO_USER_PASSWORD} #Configure your enmo password here
+  api-url: http://localhost:10001/portal-api/graphql
