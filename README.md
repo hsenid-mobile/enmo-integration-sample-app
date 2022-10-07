@@ -14,8 +14,18 @@
 ```
 curl http://localhost:8080/test
 ```
+## Sample Code
+
+* Refer `hms.enmo.examples.EnmoConnector` to see how to initiate API call to Enmo.
+* API Authentication is achieved via Spring WebClient. Configuration for authentication can be found in `hms.enmo.examples.Oauth2ClientConfig`
+* WebClient configuration is at `hms.enmo.examples.WebClientConfig`
+* All the configuration properties can be found in `application.yml`
+
+---
 
 ## API Documentation
+
+* Import the Postman collection `Enmo Public API.postman_collection.json` to quickly test the API.
 
 ### Authentication
 
@@ -113,12 +123,4 @@ Content publish API is developed using GraphQL. To publish content you have to u
 * URL : `https://clacks.hsenidmobile.com/portal-api/graphql`
 * API Spec: Refer the [documentation](enmo_content_publish_api_spec/index.html)
 * GraphQL Schema: [enmo_content_publish_api_schema.graphql](enmo_content_publish_api_schema.graphql)
-
-
-## Sample Code
-
-* Refer `hms.enmo.examples.EnmoConnector` to see how to initiate API call to Enmo.
-* API Authentication is achieved via Spring WebClient. Configuration for authentication can be found in `hms.enmo.examples.Oauth2ClientConfig`
-* WebClient configuration is at `hms.enmo.examples.WebClientConfig`
-* All the configuration properties can be found in `application.yml`
 

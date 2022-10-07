@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "0048bddb-9071-47fe-a9b4-7d21a690ad6f",
+		"name": "Enmo Public API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4494044"
+	},
+	"item": [
+		{
+			"name": "mutations",
+			"item": [
+				{
+					"name": "createContent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUOUtxdm9NLUNoMC1OUW5xMkk0Ry1aRUYxOWkzZEV3Q3IxX1dka0c1Z3NjIn0.eyJleHAiOjE2NjUxMTIzMzIsImlhdCI6MTY2NTExMjAzMiwianRpIjoiZDQwMDgwMzktYjY1Yi00ZmMyLWIyZTMtMzFhY2JjZDA2YzEzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL2F1dGgvcmVhbG1zL2NsYWNrcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIwOWQ0NWViMS0xYzkwLTRhZWMtYTYxMy1lMDA0NzQwMWExYTgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb250ZW50LXdpemFyZC13ZWIiLCJzZXNzaW9uX3N0YXRlIjoiYzJmMzBhMzktOTZmYi00ODE5LTg5NTAtMGNjMGIzMmQ4YzEzIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwczovL2NsYWNrcy5oc2VuaWRtb2JpbGUuY29tIiwiaHR0cDovL2xvY2FsaG9zdDozMDAwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiVklFV19BUFBTIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJ1c2VyX25hbWUiOiJzdW5pbWFsaSIsImNwSWQiOiIxMSIsInByZWZlcnJlZF91c2VybmFtZSI6InN1bmltYWxpIn0.d8YKr9wosmJKu3jTIe4e1sw6s5oZEXBcNTDpSW9Dl2_MoDQtDSu2CHehAUJsZvtHrCSgdDpMY8QzuDPV5ULtpo5ZEvMYd9oNfOAjxCAOpjtcXEyD1Jd_A3kqsDWGSWGEXsDil6CX975KPBsF84ecC5Us1yDTJ6AiVYnmSvVNXn8aiI9eyTgyRU0xuXaEaf9tqI_bnqvw9U4av4pao7MHhwlkIxpxA-ndw9612AbxOq_mMOsCGsOsC3dw1w9yg2xBME5MJTeaxDrX19qhydHyhvdFT8BuXWlC-Fl7_BrMBhnjZvwNPRoWhwsFC0f2rRti3EvG4Avv1e70qgJ5SLMPfw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createContent ($appId: Int!, $multiMediaContent: String!, $basicDetails: CreateContentReqGqlInput!) {\n    createContent (appId: $appId, multiMediaContent: $multiMediaContent, basicDetails: $basicDetails) {\n        contentId\n    }\n}",
+								"variables": "{\n  \"appId\": 85,\n  \"multiMediaContent\": \"\",\n  \"basicDetails\": {\n    \"description\": \"Hello Enmo\",\n    \"enableComments\": true,\n    \"enableClickToCall\": false,\n    \"enableLikes\": true,\n    \"valid\": true,\n    \"fromDate\": \"2022-10-07\",\n    \"toDate\": \"2022-12-31\",\n    \"textColor\": \"black\",\n    \"backgroundColor\": \"#B4CDE6\",\n    \"backgroundGraphic\": \"\",\n    \"templateText\": \"Hello Enmo\",\n    \"contentType\": \"TEXT_TEMPLATE\",\n    \"status\": \"approval_not_required\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:10001/portal-api/graphql",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10001",
+							"path": [
+								"portal-api",
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "RequestToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "content-wizard-web",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "sunimali",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9090/auth/realms/clacks/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"auth",
+								"realms",
+								"clacks",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic Y29udGVudC13aXphcmQtd2ViOg==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ZWZhYWJlNi00YTY4LTQ1ZjItYmNjMC04MGVmOTE0YjMyM2IifQ.eyJleHAiOjE2NjUxMTM0ODksImlhdCI6MTY2NTExMTY4OSwianRpIjoiZmQ4MDVkNGQtNjdhZS00YzBjLWFjOWUtNzdhNTZlMjMyYWJlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL2F1dGgvcmVhbG1zL2NsYWNrcyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5MC9hdXRoL3JlYWxtcy9jbGFja3MiLCJzdWIiOiIwOWQ0NWViMS0xYzkwLTRhZWMtYTYxMy1lMDA0NzQwMWExYTgiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiY29udGVudC13aXphcmQtd2ViIiwic2Vzc2lvbl9zdGF0ZSI6ImMyZjMwYTM5LTk2ZmItNDgxOS04OTUwLTBjYzBiMzJkOGMxMyIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCJ9.WbOdmpunEEk5XXq6gbhyqISrDWjKoXr_vbScR743ICI",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9090/auth/realms/clacks/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"auth",
+								"realms",
+								"clacks",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "any"
+		}
+	]
+}
