@@ -49,8 +49,8 @@ public class EnmoConnector {
 
     public void sendEnmoRichTextContent() {
         var bodyColor = "#D1F6F3";
-        var textColor = "DarkOrange";
-        var enmoAppId = 78;
+        var textColor = "yellow";
+        var enmoAppId = 85;
         var requestBodyTemplate = """
                 '{'
                   "operationName": "CreateContent",
@@ -70,7 +70,7 @@ public class EnmoConnector {
                       "backgroundGraphic": "",
                       "textColor": "{4}",
                       "contentType": "TEXT_TEMPLATE",
-                      "status": "approval_not_requiredaa"
+                      "status": "approval_not_required"
                     '}'
                   '}',
                     "query": "mutation CreateContent($appId: Int!, $multiMediaContent: String!, $basicDetails: CreateContentReqGqlInput!) '{'\\n  createContent(appId: $appId, multiMediaContent: $multiMediaContent, basicDetails: $basicDetails) '{'\\n    contentId\\n    __typename\\n  '}'\\n'}'\\n"
